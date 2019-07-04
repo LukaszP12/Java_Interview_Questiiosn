@@ -1,4 +1,6 @@
 package FindMiddleIndex;
+//Find out the array index or position where sum of number preceeding the index
+//is equals to sum of numbers succeeding the index
 
 public class FindMiddleIndex {
 
