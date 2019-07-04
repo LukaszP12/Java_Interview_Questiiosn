@@ -10,7 +10,7 @@ public class FindMiddleIndex {
         int sumRight = 0;
         while (true) {
             if(sumLeft > sumRight){
-                sumRight += numbers[endIndex-1];
+                sumRight += numbers[endIndex--];
             } else {
                 sumLeft += numbers[startIndex++];
             }
