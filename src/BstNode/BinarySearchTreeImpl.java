@@ -48,6 +48,7 @@ public class BinarySearchTreeImpl {
         return insertNode(tmpNode, data);
     }
 
+    // min and max value
     public Integer findMinValue(){
         return minValue(this.root);
     }
@@ -70,6 +71,19 @@ public class BinarySearchTreeImpl {
         return node.getData();
     }
 
+    //find height
+    public Integer findHeight(){
+        return getNodeHeight(this.root);
+    }
+
+    private Integer getNodeHeight(BstNode node){
+        if(node == null){
+            return -1;
+        }
+
+        return Math.max(getNodeHeight(node.getLeft()), getNodeHeight(node.getRight()))+1;
+    }
+
     public static void main(String a[]) {
 
         BinarySearchTreeImpl bst = new BinarySearchTreeImpl();
@@ -82,5 +96,7 @@ public class BinarySearchTreeImpl {
         bst.insert(23);
         System.out.println("Min value: "+bst.findMinValue());
         System.out.println("Max value: "+bst.findMaxValue());
+
+        System.out.println("The height of the tree is: " + bst.findHeight());
     }
 }
