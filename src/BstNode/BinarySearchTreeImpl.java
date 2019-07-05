@@ -48,6 +48,28 @@ public class BinarySearchTreeImpl {
         return insertNode(tmpNode, data);
     }
 
+    public Integer findMinValue(){
+        return minValue(this.root);
+    }
+
+    public Integer findMaxValue(){
+        return maxValue(this.root);
+    }
+
+    private Integer minValue(BstNode node){
+        if(node.getLeft() != null){
+            return minValue(node.getLeft());
+        }
+        return node.getData();
+    }
+
+    private Integer maxValue(BstNode node){
+        if(node.getRight() != null){
+            return minValue(node.getRight());
+        }
+        return node.getData();
+    }
+
     public static void main(String a[]) {
 
         BinarySearchTreeImpl bst = new BinarySearchTreeImpl();
@@ -58,5 +80,7 @@ public class BinarySearchTreeImpl {
         bst.insert(6);
         bst.insert(16);
         bst.insert(23);
+        System.out.println("Min value: "+bst.findMinValue());
+        System.out.println("Max value: "+bst.findMaxValue());
     }
 }
