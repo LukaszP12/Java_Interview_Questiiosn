@@ -10,6 +10,7 @@ public class IsPerfectNumber {
                 temp += i;
             }
         }
+
         if(temp == number){
             System.out.println("It is a perfect number");
             return true;
